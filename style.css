@@ -11,6 +11,9 @@ body {
    background-color: #cccccc;
 }
 
+.twitchchanneltext {
+  margin-left: 600px;
+}
 
 * {
   margin: 0;
