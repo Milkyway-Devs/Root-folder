@@ -25,20 +25,20 @@
     <form>
         <input id="fortniteusername" class="twitchchanneltext" type="text" placeholder="Fortnite Username">
       <select>
-        <option value="pc" > PC
-        <option value="xbl" > Xbox
-        <option value="psn" > PS4
+        <option id="systemv" value="pc" > PC
+        <option id="systemv" value="xbl" > Xbox
+        <option id="systemv" value="psn" > PS4
       </select>
         <button type="button" onclick="change()">Check Stats</button>
     </form>
-    <blockquote id="tracker" height="400" width="960" cite=""></blockquote>
+    <iframe id="tracker" height="400" width="960" src=""></blockquote>
     <script> // Channel Changes
      function change() {
        var fortnitelink = "https://fortnitetracker.com/profile/";
        var player = document.getElementById("fortniteusername").value;
-       var system = document.getElementByTag("select").value;
+       var system = document.getElementById("systemv").value;
        var slash = "/";
-       document.getElementById("tracker").cite = fortnitelink + system + slash + player;
+       document.getElementById("tracker").src = fortnitelink + system + slash + player;
         }
     </script>
   </body>
