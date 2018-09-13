@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Milkshake's Website</title><!--this is The Tab Title-->
-    <meta charset="UTF-8">
-    <script type="text/javascript" src="data.json"></script>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body> 
-    <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./twitch.html">Twitch</a></li>
-        <li><a href="./break.html">Game Room</a></li>
-        <li><a href="./youtube.html">youtube</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <h2 class="title">Milkshake's Website Home</h2>
-    <form>
-        <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Youtube Video link">
-        <button type="button" onclick="changechannel()">Enter</button>
-    </form>
-    <iframe id="twitchplayer" class="twitchplayer" width="1300" height="700" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <script> // Channel Changes
-     function changechannel() {
-       var twitchlink = "https://www.youtube.com/watch?v=";
-       var channel = document.getElementById("twitchchanneltext").value;
-       document.getElementById("twitchplayer").src = twitchlink + channel;
-        }
-    </script>
-  </body>
+
+<head>
+  <title>Milkshake's Website</title>
+  <!--this is The Tab Title-->
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="data.json"></script>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="./index.html">Home</a>
+      </li>
+      <li>
+        <a href="./twitch.html">Twitch</a>
+      </li>
+      <li>
+        <a href="./break.html">Game Room</a>
+      </li>
+      <li>
+        <a href="./youtube.html">youtube</a>
+      </li>
+      <li>
+        <a href="./contact.html">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <h2 class="title">Milkshake's Website Home</h2>
+  <form>
+    <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Youtube Video link">
+    <button type="button" onclick="changechannel()">Enter</button>
+  </form>
+  <iframe id="twitchplayer" class="twitchplayer" width="1300" height="700" src="" frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+  <script> // Channel Changes
+    function changechannel() {
+      var twitchlink = "https://www.youtube.com/watch?v=";
+      var channel = document.getElementById("twitchchanneltext").value;
+      document.getElementById("twitchplayer").src = twitchlink + channel;
+    }
+  </script>
+</body>
+
 </html>

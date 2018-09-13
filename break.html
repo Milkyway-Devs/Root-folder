@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script type="text/javascript" src="script.js"></script>
-    <title>Milkshake's Website</title><!--this is The Tab Title-->
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./twitch.html">Twitch</a></li>
-        <li><a href="./break.html">Game Room</a></li>
-        <li><a href="./youtube.html">Youtube</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <h2 class="title">Milkshake's Arcade!</h2>
-    <br> <!--The Line Spacing-->
-    <iframe id="game1" src="http://nadgames.com/WebGL/Combat_Reloaded/embed/" frameborder="0" style="border:none;" width="960" height="600" scrolling="no"></iframe>
-    <div id="discord">
-     <embed height="400" width="960" src="https://widgetbot.io/embed/426040547380035584/456579915463000084/0002/?lang=en"  />
-    </div>
-    <form>
-        <input id="fortniteusername" class="twitchchanneltext" type="text" placeholder="Fortnite Username">
-      <select>
-        <option id="systemv" value="pc" > PC</option>
-        <option id="systemv" value="xbl" > Xbox</option>
-        <option id="systemv" value="psn" > PS4</option>
-      </select>
-        <button type="button" onclick="change()">Check Stats</button>
-    </form>
-    <iframe id="tracker" class="tracker" height="500" width="960" frameborder="0" style="border:none;" src=""></iframe>
-    <script> // Channel Changes
-     function change() {
-       var fortnitelink = "https://fortnitetracker.com/profile/";
-       var player = document.getElementById("fortniteusername").value;
-       var system = document.getElementById("systemv").value;
-       var slash = "/";
-       document.getElementById("tracker").src = fortnitelink + system + slash + player;
-        }
-    </script>
-     <iframe height="500" width="960" frameborder="0" style="border:none;" src="https://fnbr.co/shop"></iframe>
-     <iframe src="https://www.freegames66.com/iframe-flash/electric-man-2" width="800" height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" seamless="true" webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true" allowfullscreen="true" webkit-playsinline="true" scrolling="no" style="display:block"></iframe> 
-  </body>
+
+<head>
+  <script type="text/javascript" src="script.js"></script>
+  <title>Milkshake's Website</title>
+  <!--this is The Tab Title-->
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="./index.html">Home</a>
+      </li>
+      <li>
+        <a href="./twitch.html">Twitch</a>
+      </li>
+      <li>
+        <a href="./break.html">Game Room</a>
+      </li>
+      <li>
+        <a href="./youtube.html">Youtube</a>
+      </li>
+      <li>
+        <a href="./contact.html">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <h2 class="title">Milkshake's Arcade!</h2>
+  <br>
+  <!--The Line Spacing-->
+  <iframe id="game1" src="http://nadgames.com/WebGL/Combat_Reloaded/embed/" frameborder="0" style="border:none;" width="960"
+    height="600" scrolling="no"></iframe>
+  <div id="discord">
+    <embed height="400" width="960" src="https://widgetbot.io/embed/426040547380035584/456579915463000084/0002/?lang=en" />
+  </div>
+  <form>
+    <input id="fortniteusername" class="twitchchanneltext" type="text" placeholder="Fortnite Username">
+    <select>
+      <option id="systemv" value="pc"> PC</option>
+      <option id="systemv" value="xbl"> Xbox</option>
+      <option id="systemv" value="psn"> PS4</option>
+    </select>
+    <button type="button" onclick="change()">Check Stats</button>
+  </form>
+  <iframe id="tracker" class="tracker" height="500" width="960" frameborder="0" style="border:none;" src=""></iframe>
+  <script> // Channel Changes
+    function change() {
+      var fortnitelink = "https://fortnitetracker.com/profile/";
+      var player = document.getElementById("fortniteusername").value;
+      var system = document.getElementById("systemv").value;
+      var slash = "/";
+      document.getElementById("tracker").src = fortnitelink + system + slash + player;
+    }
+  </script>
+  <iframe height="500" width="960" frameborder="0" style="border:none;" src="https://fnbr.co/shop"></iframe>
+  <iframe src="https://www.freegames66.com/iframe-flash/electric-man-2" width="800" height="600" marginwidth="0" marginheight="0"
+    hspace="0" vspace="0" frameborder="0" seamless="true" webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true"
+    allowfullscreen="true" webkit-playsinline="true" scrolling="no" style="display:block"></iframe>
+</body>
+
 </html>
