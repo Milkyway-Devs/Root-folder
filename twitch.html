@@ -25,16 +25,6 @@
         <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
         <button id="myBtn" onclick="changechannel()">Change</button>
     </form>
-    <script> // enter key
-      document.getElementById("twitchchanneltext")
-      .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-          document.getElementById("myBtn").click();
-       
-      }
-  });
-      </script>
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <script> // Channel Changes
      function changechannel() {
