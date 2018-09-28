@@ -43,15 +43,23 @@
     <button id="myBtn" onclick="changechannel()">Change</button>
   </form>
   <blockquote class="twitchplayer" id="twitchplayer">
-    <h4>
-      <a href="">
-  </blockquote>
-  <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+    <div id="twitch-embed"></div>
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: ""
+      });
+    </script>
   <script> // Channel Changes
     function changechannel() {
-      var twitchlink = "https://twitch.tv/";
+      var twitchlink = "https://player.twitch.tv/";
       var channel = document.getElementById("twitchchanneltext").value;
-      document.getElementById("twitchplayer").href = twitchlink + channel;
+      document.getElementById("twitchplayer").channel = twitchlink + channel;
     }
   </script>
 </body>
