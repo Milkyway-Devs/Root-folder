@@ -45,7 +45,7 @@
 <iframe id="twitchplayer" class="twitchplayer" src="" height="1920>" width="1080" frameborder="true" scrolling="no" allowfullscreen="true"></iframe>
   <script> // Channel Changes
     function changechannel() {
-      var twitchlink = "https://player.twitch.tv/?";
+      var twitchlink = "https://player.twitch.tv/?channel=";
       var channel = document.getElementById("twitchchanneltext").value;
       document.getElementById("twitchplayer").src = twitchlink + channel;
     }
