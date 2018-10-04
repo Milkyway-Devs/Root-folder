@@ -42,13 +42,12 @@
     <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
     <button onclick="changechannel()">Change</button>
   </form>
-  <a id="twitchplayer" class="twitchplayer" data-card-controls="0" data-card-theme="dark" href=""></a>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+<iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
   <script> // Channel Changes
     function changechannel() {
-      var twitchlink = "https://twitch.tv/";
+      var twitchlink = "https://player.twitch.tv/?channel=";
       var channel = document.getElementById("twitchchanneltext").value;
-      document.getElementById("twitchplayer").href = twitchlink + channel;
+      document.getElementById("twitchplayer").src = twitchlink + channel;
     }
   </script>
 </body>
