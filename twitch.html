@@ -41,21 +41,6 @@
     <form>
         <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Twitch Channel Name">
         <button id="myBtn" type="button" onclick="changechannel()">Change</button>
-        <script>
-  // Get the input field
-var input = document.getElementById("twitchchanneltext");
-
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Cancel the default action, if needed
-  event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("myBtn").click();
-  }
-});
-  </script>
     </form>
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <script> // Channel Changes
@@ -65,5 +50,13 @@ input.addEventListener("keyup", function(event) {
        document.getElementById("twitchplayer").src = twitchlink + channel;
         }
     </script>
+          <script>
+$(document).ready(function(){
+    $('#twitchchanneltext').keypress(function(e){
+      if(e.keyCode==13)
+      $('#myBtn').click();
+    });
+});
+  </script>
   </body>
 </html>
