@@ -41,16 +41,7 @@
     <form>
         <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Twitch Channel Name">
         <button id="myBtn" type="button" onclick="changechannel()">Change</button>
-    </form>
-    <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
-    <script> // Channel Changes
-     function changechannel() {
-       var twitchlink = "https://player.twitch.tv/?channel=";
-       var channel = document.getElementById("twitchchanneltext").value;
-       document.getElementById("twitchplayer").src = twitchlink + channel;
-        }
-    </script>
-  <script>
+        <script>
   // Get the input field
 var input = document.getElementById("twitchchanneltext");
 
@@ -65,5 +56,14 @@ input.addEventListener("keyup", function(event) {
   }
 });
   </script>
+    </form>
+    <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
+    <script> // Channel Changes
+     function changechannel() {
+       var twitchlink = "https://player.twitch.tv/?channel=";
+       var channel = document.getElementById("twitchchanneltext").value;
+       document.getElementById("twitchplayer").src = twitchlink + channel;
+        }
+    </script>
   </body>
 </html>
