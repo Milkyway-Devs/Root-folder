@@ -35,12 +35,12 @@
   </nav>
   <h2 class="title">Milkshake's Website Home</h2>
   <form>
-    <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Youtube Video link">
+    <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="After v=">
     <button type="button" onclick="changechannel()">Enter</button>
   </form>
   <iframe id="twitchplayer" class="twitchplayer" width="1300" height="700" src="" frameborder="0" allow="autoplay; encrypted-media"
     allowfullscreen></iframe>
-  <script> // Channel Changes
+  <script> // video Changes
     function changechannel() {
       var twitchlink = "https://www.youtube.com/watch?v=";
       var channel = document.getElementById("twitchchanneltext").value;
