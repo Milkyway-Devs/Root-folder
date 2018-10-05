@@ -43,20 +43,15 @@
         <button id="myBtn" type="button" onclick="changechannel()">Change</button>
     </form>
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
+    <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="350"></iframe>  
     <script> // Channel Changes
      function changechannel() {
        var twitchlink = "https://player.twitch.tv/?channel=";
+       var twitchchat = "https://www.twitch.tv/embed/"
        var channel = document.getElementById("twitchchanneltext").value;
        document.getElementById("twitchplayer").src = twitchlink + channel;
+       document.getElementById("twitchchat").src = twitchchat + channel + "/chat";
         }
     </script>
-          <script>
-$(document).ready(function(){
-    $('#twitchchanneltext').keypress(function(e){
-      if(e.keyCode==13)
-      $('#myBtn').click();
-    });
-});
-  </script>
   </body>
 </html>
