@@ -45,6 +45,14 @@
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="1300"></iframe>  
     <script> // Channel Changes
+      document.getElementById("twitchchanneltext")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myBtn").click();
+    }
+});
+      
      function changechannel() {
        var twitchlink = "https://player.twitch.tv/?channel=";
        var twitchchat = "https://www.twitch.tv/embed/";
