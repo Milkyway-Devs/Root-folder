@@ -45,12 +45,19 @@
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="1300"></iframe>  
     <script> // Channel Changes
-function myFunction(event) {
-    var x = event.keyCode;
-    if (x == 13) {  
-        changechannel()
-    }
-}
+// Get the input field
+var input = document.getElementById("twitchchanneltext");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", changechannel() {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
 
      function changechannel() {
        var twitchlink = "https://player.twitch.tv/?channel=";
