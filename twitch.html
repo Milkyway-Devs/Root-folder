@@ -37,14 +37,20 @@
   <br>
   <!--The Line Spacing-->
   <p color="red">Enter Does not auto click the button i am stil working on that</p>
-
-    <form>
-        <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="Twitch Channel Name">
-        <input id="myBtn" type="button" onclick="changechannel()" value="Change">
-    </form>
+        <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
+  <button id="myBtn" onclick="changechannel()">Change</button>
     <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="1300"></iframe>  
-    <script> // Channel Changes
+    <script>
+var input = document.getElementById("twitchchanneltext");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myBtn").click();
+    }
+});
+</script>
+     <script> // Channel Changes
      function changechannel() {
        var twitchlink = "https://player.twitch.tv/?channel=";
        var twitchchat = "https://www.twitch.tv/embed/";
@@ -58,11 +64,11 @@
 <button id="myBtn2" onclick="javascript:alert('Hello World!')">Button</button>
 
 <script>
-var input = document.getElementById("myInput");
+var input = document.getElementById("twitchchanneltext");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementById("myBtn2").click();
+        document.getElementById("myBtn").click();
     }
 });
 </script>
