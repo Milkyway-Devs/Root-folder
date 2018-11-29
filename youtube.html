@@ -8,6 +8,150 @@
   <script type="text/javascript" src="youtube.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+
+ function GetTubeTitle() {
+ try {
+ var sT = "<meta name=\"title\" content=\"";
+ var s = response.indexOf(sT) + sT.length;
+ var e = response.indexOf("\"", s);
+
+ var title = response.substring(s, e);
+ if (title.match(".$"))
+ title = title.substring(0, title.length - 1);
+
+ return title;
+ }
+ catch (ex) {
+ return "";
+ }
+ }
+
+ function ParseResponse(res) {
+ try {
+ response = res;
+
+ var mp = "id=\"movie_player\"";
+ var s1 = response.indexOf(mp);
+ var s2;
+ if (navigator.appVersion.match("MSIE") != null) {
+ var paramflash = "name=\"flashvars\" value=\"";
+ s2 = response.indexOf(paramflash, s1) + paramflash.length;
+ }
+ else {
+ var flashvar = "flashvars=";
+ s2 = response.indexOf(flashvar, s1) + flashvar.length;
+ }
+
+ var end = response.indexOf("\"", s2);
+ var str = response.substring(s2, end);
+
+ w = str.split("&amp;");
+
+ for (i = 0; i <= w.length - 1; i++)
+ if (w[i].split("=")[0] == "url_encoded_fmt_stream_map") {
+ links = unescape(w[i].split("=")[1]);
+ break;
+ }
+ abc = links.split(",url="); for (i = 0; i <= abc.length - 1; i++) {
+ fmt = abc[i].split("|")[0];
+ if ((fmt.indexOf("flv") > 0) && (fmt.indexOf("large") <= 0) && (fmt.indexOf("medium") <= 0)) {
+ if (fmt.indexOf("rl=") > 0) {
+ url = fmt.substring(4, fmt.indexOf("fallback_host") - 1);
+ url = unescape(unescape(url));
+ break;
+ }
+ else {
+ url = fmt.substring(0, fmt.indexOf("fallback_host") - 1);
+ url = unescape(unescape(url)); break;
+ }
+ }
+ }
+ combineurl = url + '&title=' + GetTubeTitle();
+ $("#dirLink").attr("href", combineurl);
+ // window.clipboardData.setData('Text', combineurl);
+ window.location.href = combineurl;
+ }
+ catch (ex) {
+ alert(ex.Message);
+ }
+ finally {
+ working = false;
+ ready();
+ }
+ }
+
+ var working = false;
+
+ function hideDirectLink() {
+ $("#dirLink").removeClass("s").addClass("h");
+ }
+
+ function ready() {
+ $("#err").removeClass("s").addClass("h");
+ $("#loader").removeClass("s").addClass("h");
+ $("#dirLink").removeClass("h").addClass("s");
+ }
+
+ function load() {
+ $("#err").removeClass("s").addClass("h");
+ $("#loader").removeClass("h").addClass("s");
+ $("#dirLink").removeClass("s").addClass("h");
+ }
+
+ function showError(text) {
+ $("#err").text(text);
+ $("#err").removeClass("h").addClass("s");
+ $("#loader").removeClass("s").addClass("h");
+ $("#dirLink").removeClass("s").addClass("h");
+ }
+
+ function GetTubeSource() {
+ var uri = $("#txtUrl").val();
+
+ if (uri.match("youtube.com") == null) {
+ showError("Please Provide Valid YouTube Uri");
+ return;
+ }
+
+ load();
+
+ $.ajax({
+ url: uri,
+ success: function (data) {
+ ParseResponse(data);
+ },
+ error: function (jqXHR, textStatus, errorThrown) {
+ showError(errorThrown);
+ }
+ });
+
+ }
+
+ $(document).ready(function () {
+ jQuery.support.cors = true;
+ });
+ 
+ 
+ 
+ </script>
+ <style type="text/css">
+ /*demo page css*/
+ body
+ {
+ font: 90% "Trebuchet MS" , sans-serif;
+ margin: 50px;
+ }
+ .h
+ {
+ visibility: hidden;
+ }
+ .s
+ {
+ visibility: visible;
+ }
+ </style>
+
 </head>
 
 <body>
@@ -34,19 +178,18 @@
     </ul>
   </nav>
   <h2 class="title">Milkshake's Website Home</h2>
-  <form>
-    <input id="twitchchanneltext" class="twitchchanneltext" type="text" placeholder="After v=">
-    <button type="button" onclick="changechannel()">Enter</button>
-  </form>
-  <iframe id="twitchplayer" class="twitchplayer" width="1300" height="700" src="" frameborder="0" allow="autoplay; encrypted-media"
-    allowfullscreen></iframe>
-  <script> // video Changes
-    function changechannel() {
-      var twitchlink = "https://www.youtube.com/watch?v=";
-      var channel = document.getElementById("twitchchanneltext").value;
-      document.getElementById("twitchplayer").src = twitchlink + channel;
-    }
-  </script>
+  <div style="text-align: center">
+ <h3>
+ JavaScript YouTube Downloader</h3>
+ <input type="text" style="width: 300px" id="txtUrl" />
+ <input type="button" value="Download Tube" id="btnDownload" onclick="GetTubeSource()" />
+ <div><a class="h" href="#" id="dirLink">Direct Link</a></div>
+ <div class="h" id="err" style="color: Red">
+ </div>
+ <div>
+ <img src="http://blogs.microsoft.co.il/photos/shair/images/921972/original.aspx" class="h" id="loader" />
+ </div>
+ <
+ </div>
 </body>
-
 </html>
