@@ -3,6 +3,7 @@
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
+  text-decoration-color: chartreuse
 }
 
 /* Links inside the navbar */
@@ -36,6 +37,7 @@
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
+  text-decoration-color: black
 }
 
 /* Dropdown content (hidden by default) */

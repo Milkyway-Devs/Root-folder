@@ -8,8 +8,8 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./navbar.css">
-  </head>
+  <link rel="stylesheet" href="./navbar.css">
+</head>
   <body>
     <div id="navbar" class="navbar">
       <a href="./index.html">Home</a>
@@ -21,29 +21,28 @@
     </div>
   <h2 class="title">The Changeable twitch Player!</h2>
   <br>
-  <!--The Line Spacing-->
-  <p color="red">Enter Does not auto click the button i am stil working on that</p>
-        <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
+  <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
   <button id="myBtn" onclick="changechannel()">Change</button>
-    <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
-    <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="1300"></iframe>  
-    <script>
-var input = document.getElementById("twitchchanneltext");
-input.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
+  <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
+  <iframe id="twitchchat" src="" frameborder="0" scrolling="no" height="500" width="1300"></iframe>
+  <script>
+    var input = document.getElementById("twitchchanneltext");
+    input.addEventListener("keyup", function (event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
         document.getElementById("myBtn").click();
+      }
+    });
+  </script>
+  <script> // Channel Changes
+    function changechannel() {
+      var twitchlink = "https://player.twitch.tv/?channel=";
+      var twitchchat = "https://www.twitch.tv/embed/";
+      var channel = document.getElementById("twitchchanneltext").value;
+      document.getElementById("twitchplayer").src = twitchlink + channel;
+      document.getElementById("twitchchat").src = twitchchat + channel + "/chat";
     }
-});
-</script>
-     <script> // Channel Changes
-     function changechannel() {
-       var twitchlink = "https://player.twitch.tv/?channel=";
-       var twitchchat = "https://www.twitch.tv/embed/";
-       var channel = document.getElementById("twitchchanneltext").value;
-       document.getElementById("twitchplayer").src = twitchlink + channel;
-       document.getElementById("twitchchat").src = twitchchat + channel + "/chat";
-        }
-    </script>
+  </script>
   </body>
-</html>
+  
+  </html>
