@@ -11,10 +11,6 @@ body {
    background-color: #cccccc;
 }
 
-#ytdl {
-  margin-left: 250px;
-}
-
 .twitchchanneltext {
   margin-left: 600px;
 }
@@ -68,8 +64,4 @@ ul li a {
 .ninja {
   margin-left: 700px;
   margin-top: -1000px;
-}
-
-.h3para {
-  
 }
