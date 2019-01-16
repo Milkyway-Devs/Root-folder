@@ -44,6 +44,25 @@
       document.getElementById("twitchchat").src = twitchchat + channel + "/chat";
     }
   </script>
+      <input id="twitchchanneltext2" class="twitchchanneltext2" placeholder="Twitch video id">
+  <button id="myBtn2" onclick="changechannel2()">Change</button>
+  <iframe id="twitchplayer2" class="twitchplayer2" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
+    <script>
+    var input = document.getElementById("twitchchanneltext2");
+    input.addEventListener("keyup", function (event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById("myBtn2").click();
+      }
+    });
+  </script>
+  <script> // video Changes
+    function changechannel2() {
+      var twitchlink2 = "https://player.twitch.tv/video/";
+      var video = document.getElementById("twitchchanneltext2").value;
+      document.getElementById("twitchplayer").src = twitchlink + video;
+    }
+  </script>
   </body>
   
   </html>
