@@ -22,6 +22,7 @@
     </div>
   <h2 class="title">The Changeable twitch Player!</h2>
   <br>
+    <h3>Live Twitch Stream</h3>
   <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
   <button id="myBtn" onclick="changechannel()">Change</button>
   <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
@@ -44,9 +45,10 @@
       document.getElementById("twitchchat").src = twitchchat + channel + "/chat";
     }
   </script>
-      <input id="twitchchanneltext2" class="twitchchanneltext2" placeholder="Twitch video id">
+    <h3>Twitch Video Player</h3>
+      <input id="twitchchanneltext2" class="twitchchanneltext" placeholder="Twitch video id">
   <button id="myBtn2" onclick="changechannel2()">Change</button>
-  <iframe id="twitchplayer2" class="twitchplayer2" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
+  <iframe id="twitchplayer2" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
     <script>
     var input = document.getElementById("twitchchanneltext2");
     input.addEventListener("keyup", function (event) {
