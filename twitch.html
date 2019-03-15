@@ -23,6 +23,7 @@
   <h2 class="title">The Changeable twitch Player!</h2>
   <br>
     <h3 id="label4">Live Twitch Stream</h3>
+    <button onclick="ccm1lkshak3_()">M1lkshak3_</button>
   <input id="twitchchanneltext" class="twitchchanneltext" placeholder="Twitch Channel Name">
   <button id="myBtn" onclick="changechannel()">Change</button>
   <iframe id="twitchplayer" class="twitchplayer" src="" frameborder="0" allowfullscreen="true" scrolling="no" height="700" width="1300"></iframe>
@@ -35,6 +36,14 @@
         document.getElementById("myBtn").click();
       }
     });
+  </script>
+  <script> // Channel Changes to m1lkshak3_
+    function ccm1lkshak3_() {
+      var twitchlink = "https://player.twitch.tv/?channel=";
+      var twitchchat = "https://www.twitch.tv/embed/";
+      document.getElementById("twitchplayer").src = twitchlink + "m1lkshak3_";
+      document.getElementById("twitchchat").src = twitchchat + "m1lkshak3_" + "/chat";
+    }
   </script>
   <script> // Channel Changes
     function changechannel() {
